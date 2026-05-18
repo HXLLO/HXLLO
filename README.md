@@ -1,27 +1,25 @@
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="./assets/hero-dark.svg">
-  <img alt="Thomas Housset — Cybersecurity, cloud, AI. Consulting by day, building the rest of the time." src="./assets/hero-light.svg" width="900">
+  <img alt="Thomas Housset, security engineer and builder" src="./assets/hero-light.svg" width="900">
 </picture>
 
 &nbsp;
 
-Hybrid profile: GRC and strategic advisory, cloud and DevSecOps engineering, AI governance research, and a steady stream of side projects. The mix is the point.
+Engineer focused on security, cloud, and AI. I ship software for a living and on the side, mostly OSINT tooling, agents, and applied AI for cyber. The mix is the point.
 
 ### Currently
 
-Cybersecurity consultant at **[Advens](https://www.advens.com)** in Paris, working on cloud security, AI governance, and M&A cyber due diligence. Writing a master's thesis on sovereign AI governance at **Oteria Cyber School**, defending July 2026.
+Security and AI engineer at **[Advens](https://www.advens.com)** in Paris, working on cloud security (Azure), AI governance, and M&A cyber due diligence. Writing a master's thesis on sovereign AI governance at **Oteria Cyber School**, defending July 2026.
 
-Previously Deputy CISO at **Mercedes-Benz Athlon** (2021–2024).
+Previously Deputy CISO and DevOps engineer at **Mercedes-Benz Athlon** (2021 to 2024).
 
 ### Building
 
-| | |
-|:--|:--|
-| **[acquis.app](https://acquis.app)** | OSINT platform for M&A cyber due diligence |
-| **[research.thomas.how](https://research.thomas.how)** | Public research hub: thesis, projects, certifications, notes |
-| **[WayTrace](https://github.com/HXLLO/WayTrace)** | Wayback Machine intelligence toolkit, crash-resumable |
-| **[RegulAIte](https://github.com/HXLLO/RegulAIte)** | Multi-agent RAG over EU cyber regulation |
-| **[FishSentinel](https://github.com/HXLLO/FishSentinel)** | Phishing simulation framework |
+- **[acquis.app](https://acquis.app)**, OSINT platform for M&A cyber due diligence
+- **[research.thomas.how](https://research.thomas.how)**, public research hub: thesis, projects, certifications, notes
+- **[WayTrace](https://github.com/HXLLO/WayTrace)**, Wayback Machine intelligence toolkit, crash-resumable
+- **[RegulAIte](https://github.com/HXLLO/RegulAIte)**, multi-agent RAG over EU cyber regulation
+- **[FishSentinel](https://github.com/HXLLO/FishSentinel)**, phishing simulation framework
 
 ### Working with
 
@@ -29,10 +27,10 @@ Previously Deputy CISO at **Mercedes-Benz Athlon** (2021–2024).
 
 ### Studied
 
-- **Microsoft AZ-104** — Azure Administrator
-- **Microsoft AZ-500** — Azure Security Engineer
-- **Anthropic** — [Claude API Development](https://verify.skilljar.com/c/e4gk4iaodja7)
-- **Anthropic** — [AI Fluency](https://verify.skilljar.com/c/7ev2gowdo8va)
+- **Microsoft AZ-104**, Azure Administrator
+- **Microsoft AZ-500**, Azure Security Engineer
+- **Anthropic**, [Claude API Development](https://verify.skilljar.com/c/e4gk4iaodja7)
+- **Anthropic**, [AI Fluency](https://verify.skilljar.com/c/7ev2gowdo8va)
 
 ### Reach out
 

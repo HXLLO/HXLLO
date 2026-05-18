@@ -7,5 +7,5 @@
   <text x="0" y="40" class="mono" fill="#60A5FA">// Paris, France</text>
   <text x="0" y="130" class="name" fill="#fafafa">Thomas Housset</text>
   <line x1="0" y1="160" x2="64" y2="160" stroke="#60A5FA" stroke-width="2.5"/>
-  <text x="0" y="200" class="tag" fill="#a3a3a3">Cybersecurity, cloud, AI. Consulting by day, building the rest of the time.</text>
+  <text x="0" y="200" class="tag" fill="#a3a3a3">Security engineer and builder. Cloud, AI, OSINT.</text>
 </svg>
