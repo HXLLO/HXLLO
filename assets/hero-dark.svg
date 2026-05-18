@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 240" width="900" height="240" fill="none">
+  <style>
+    .name { font: 800 76px/1 -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif; letter-spacing: -0.04em; }
+    .tag { font: 400 22px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif; letter-spacing: -0.01em; }
+    .mono { font: 500 13px/1 ui-monospace, SFMono-Regular, "JetBrains Mono", Menlo, monospace; letter-spacing: 0.12em; text-transform: uppercase; }
+  </style>
+  <text x="0" y="40" class="mono" fill="#60A5FA">// Paris, France</text>
+  <text x="0" y="130" class="name" fill="#fafafa">Thomas Housset</text>
+  <line x1="0" y1="160" x2="64" y2="160" stroke="#60A5FA" stroke-width="2.5"/>
+  <text x="0" y="200" class="tag" fill="#a3a3a3">Cybersecurity, cloud, AI. Consulting by day, building the rest of the time.</text>
+</svg>
