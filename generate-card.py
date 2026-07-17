@@ -17,39 +17,33 @@ OUT_DIR = Path(__file__).parent / "assets"
 SCRATCH = Path(__file__).parent
 
 # grid geometry
-COLS, ROWS = 72, 44
+COLS, ROWS = 168, 100
 CROP = "500x500+220+10"  # tete seule dans l'image 930x930
-CELL_W, CELL_H = 3.6, 6.0  # font 6px, advance 0.6em
-ART_FS = 6
+CELL_W, CELL_H = 1.56, 2.6  # font 2.6px, advance 0.6em
+ART_FS = 2.6
 
-# thomas.how palette
+# palette thomas.how, accent vert Senku (echantillonne dans les cheveux)
 DARK = dict(bg="#0b0c0e", text="#ededf0", text2="#9fa3ab", text3="#7d8087",
-            line="#ffffff", line_op="0.08", accent="#6ea8ff", ok="#4fbf7e")
+            line="#ffffff", line_op="0.08", accent="#8fd9a0", ok="#4fbf7e")
 LIGHT = dict(bg="#fafaf8", text="#17181a", text2="#575a60", text3="#7d8087",
-             line="#000000", line_op="0.10", accent="#3b76d6", ok="#2f9e5f")
+             line="#000000", line_op="0.10", accent="#2e8f57", ok="#2f9e5f")
 
 RAMP = " .`':;=+*#%@"
 
 
 def pixels():
-    # floodfill des 4 coins pour virer le fond tatami, puis boost contraste/saturation
+    # image complete, pas de suppression de fond: des caracteres partout
     txt = subprocess.run(
         ["magick", IMG, "-crop", CROP, "+repage",
-         "-fuzz", "14%", "-fill", "none",
-         "-draw", "alpha 1,1 floodfill", "-draw", "alpha 498,1 floodfill",
-         "-draw", "alpha 1,498 floodfill", "-draw", "alpha 498,498 floodfill",
-         "-draw", "alpha 250,1 floodfill", "-draw", "alpha 1,250 floodfill",
          "-modulate", "100,140,100", "-sigmoidal-contrast", "5x50%",
          "-resize", f"{COLS}x{ROWS}!", "-colorspace", "sRGB", "-depth", "8", "txt:-"],
         capture_output=True, text=True, check=True).stdout
-    grid = [[None] * COLS for _ in range(ROWS)]
-    pat = r"^(\d+),(\d+):\s*\([^)]*\)\s+#([0-9A-Fa-f]{6})([0-9A-Fa-f]{2})?"
+    grid = [[(0, 0, 0)] * COLS for _ in range(ROWS)]
+    pat = r"^(\d+),(\d+):\s*\([^)]*\)\s+#([0-9A-Fa-f]{6})"
     for m in re.finditer(pat, txt, re.M):
         x, y = int(m.group(1)), int(m.group(2))
         h = m.group(3)
-        r, g, b = int(h[0:2], 16), int(h[2:4], 16), int(h[4:6], 16)
-        a = int(m.group(4), 16) if m.group(4) else 255
-        grid[y][x] = None if a < 110 else (r, g, b)
+        grid[y][x] = (int(h[0:2], 16), int(h[2:4], 16), int(h[4:6], 16))
     return grid
 
 
@@ -66,14 +60,11 @@ def hexc(c):
 
 
 def art_lines(grid, mode):
-    """Rows of (char, color-or-None). Meme silhouette dark/light, couleurs adaptees au fond."""
+    """Rows of (char, color). Meme grille dark/light, couleurs adaptees au fond."""
     rows = []
     for row in grid:
         line = []
         for c in row:
-            if c is None:
-                line.append((" ", None))
-                continue
             l = lum(c) / 255
             # ramp resseree: la couleur porte l'image, la densite ne fait
             # que moduler la texture
@@ -84,9 +75,14 @@ def art_lines(grid, mode):
                 boost = max(0.0, 0.38 - l) * 255 * 0.85
                 col = tuple(min(255, int(v * 1.1 + boost)) for v in c)
             else:
-                # assombrit pour contraster sur fond clair, en gardant la teinte
-                col = tuple(int(v * 0.62) for v in c)
-            line.append((ch, quant(col)))
+                # compression de luminance vers [0.10, 0.58]: les clairs
+                # restent lisibles sur #fafaf8, teinte conservee et resaturee
+                target = 0.10 + l * 0.48
+                f = target / max(l, 0.02)
+                col = tuple(min(255, int(v * f)) for v in c)
+                m = sum(col) / 3
+                col = tuple(min(255, max(0, int(m + (v - m) * 1.35))) for v in col)
+            line.append((ch, quant(col, 20)))
         rows.append(line)
     return rows
 
@@ -164,8 +160,8 @@ def build(theme_name, P):
             lines.append('<text x="%g" y="%g" class="v">%s</text>' % (col_x + 96, y, esc(val)))
         y += lh
 
-    # rangee de swatches facon fastfetch, dans la palette du site
-    sw = ["#6ea8ff", "#8dbbff", "#4fbf7e", P["text"], P["text2"], P["text3"]]
+    # rangee de swatches facon fastfetch, verts Senku puis neutres
+    sw = [P["accent"], "#b2e6c0", "#4fbf7e", P["text"], P["text2"], P["text3"]]
     sx = col_x
     swatches = []
     for c in sw:
