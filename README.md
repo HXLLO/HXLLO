@@ -1,37 +1,6 @@
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="./assets/hero-dark.svg">
-  <img alt="Thomas Housset, security engineer and builder" src="./assets/hero-light.svg" width="900">
+  <source media="(prefers-color-scheme: dark)" srcset="./assets/fetch-dark.svg">
+  <img alt="Thomas Housset, ai & security engineer" src="./assets/fetch-light.svg" width="880">
 </picture>
 
-&nbsp;
-
-Engineer focused on security, cloud, and AI. I ship software for a living and on the side, mostly OSINT tooling, agents, and applied AI for cyber. The mix is the point.
-
-### Currently
-
-Security and AI engineer at **[Advens](https://www.advens.com)** in Paris, working on cloud security (Azure), AI governance, and M&A cyber due diligence. Writing a master's thesis on sovereign AI governance at **Oteria Cyber School**, defending July 2026.
-
-Previously Deputy CISO and DevOps engineer at **Mercedes-Benz Athlon** (2021 to 2024).
-
-### Building
-
-- **[acquis.app](https://acquis.app)**, OSINT platform for M&A cyber due diligence
-- **[research.thomas.how](https://research.thomas.how)**, public research hub: thesis, projects, certifications, notes
-- **[WayTrace](https://github.com/HXLLO/WayTrace)**, Wayback Machine intelligence toolkit, crash-resumable
-- **[RegulAIte](https://github.com/HXLLO/RegulAIte)**, multi-agent RAG over EU cyber regulation
-- **[FishSentinel](https://github.com/HXLLO/FishSentinel)**, phishing simulation framework
-
-### Working with
-
-`Python` &nbsp;·&nbsp; `TypeScript` &nbsp;·&nbsp; `Go` &nbsp;·&nbsp; `Rust` &nbsp;·&nbsp; `FastAPI` &nbsp;·&nbsp; `React` &nbsp;·&nbsp; `PostgreSQL` &nbsp;·&nbsp; `Docker` &nbsp;·&nbsp; `Terraform` &nbsp;·&nbsp; `Azure` &nbsp;·&nbsp; `Claude API`
-
-### Studied
-
-- **Microsoft AZ-104**, Azure Administrator
-- **Microsoft AZ-500**, Azure Security Engineer
-- **Anthropic**, [Claude API Development](https://verify.skilljar.com/c/e4gk4iaodja7)
-- **Anthropic**, [AI Fluency](https://verify.skilljar.com/c/7ev2gowdo8va)
-
-### Reach out
-
-[thomas.how](https://thomas.how) &nbsp;·&nbsp; [research.thomas.how](https://research.thomas.how) &nbsp;·&nbsp; [LinkedIn](https://linkedin.com/in/thomas-hhh) &nbsp;·&nbsp; [housset.thomas@pm.me](mailto:housset.thomas@pm.me)
+[portfolio](https://thomas.how) · [X](https://x.com/houssethomas) · [LinkedIn](https://linkedin.com/in/thomas-hhh) · [housset.thomas@pm.me](mailto:housset.thomas@pm.me)
