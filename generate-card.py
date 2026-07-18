@@ -207,7 +207,7 @@ text {{ font-family: 'Geist Mono', ui-monospace, SFMono-Regular, Menlo, monospac
 <circle cx="26" cy="26" r="5.5" fill="#ff5f57"/>
 <circle cx="46" cy="26" r="5.5" fill="#febc2e"/>
 <circle cx="66" cy="26" r="5.5" fill="#28c840"/>
-<text x="{W / 2}" y="30" text-anchor="middle" class="t">thomas@housset — zsh</text>
+<text x="{W / 2}" y="30" text-anchor="middle" class="t">zsh</text>
 <line x1="0" y1="52" x2="{W}" y2="52" stroke="{P["line"]}" stroke-opacity="{P["line_op"]}"/>
 {art_svg(rows, art_x, art_y)}
 {"".join(lines)}
